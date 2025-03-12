@@ -1,0 +1,14 @@
+﻿namespace Gateways;
+
+public class TrayInfo
+{
+    public string Name { get; set; } = string.Empty;
+    public string Color { get; set; } = string.Empty;
+    public string TagUid { get; set; } = string.Empty;
+}
+
+public class HomeAssistantState
+{
+    public string State { get; set; } = "";
+    public TrayInfo Attributes { get; set; } = new();
+}
