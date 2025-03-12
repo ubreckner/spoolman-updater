@@ -1,5 +1,4 @@
 ﻿using Gateways;
-using System;
 using Updater;
 
 var builder = WebApplication.CreateBuilder(args);
