@@ -3,34 +3,31 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # Change to your default branch if needed
+      - main  # Runs on every push to main
+  workflow_dispatch:  # 🔹 Allows manual triggering
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-      # 🔹 Step 1: Checkout code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 🔹 Step 2: Log in to Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 🔹 Step 3: Set up Docker Buildx (for better multi-platform support)
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      # 🔹 Step 4: Build and push Docker image
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Application/Dockerfile 
+          file: ./Application/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
