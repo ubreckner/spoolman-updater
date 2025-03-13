@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+    <Name>Spoolman Updater</Name>
+    <Repository>marcokreeft/spoolman-updater:latest</Repository>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Privileged>false</Privileged>
+    <Support>https://hub.docker.com/repository/docker/marcokreeft/spoolman-updater</Support>
+    <Overview>Automatically updates spool information in Spoolman based on Home Assistant data.</Overview>
+    <Category>Tools:Automation</Category>
+    <WebUI>http://[IP]:[PORT:8080]/swagger</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/marcokreeft/spoolman-updater/main/unraid_template.xml</TemplateURL>
+    <Icon>https://hub.docker.com/public/images/logos/mini-logo.png</Icon>
+    <Environment>
+        <Variable>
+            <Name>APPLICATION__HOMEASSISTANT__URL</Name>
+            <Value>http://homeassistant.local</Value>
+        </Variable>
+        <Variable>
+            <Name>APPLICATION__HOMEASSISTANT__TRAYSENSORPREFIX</Name>
+            <Value>sensor.x1c_tray_</Value>
+        </Variable>
+        <Variable>
+            <Name>APPLICATION__HOMEASSISTANT__TOKEN</Name>
+            <Value>your-token</Value>
+            <Mode>hidden</Mode>
+        </Variable>
+        <Variable>
+            <Name>APPLICATION__SPOOLMAN__URL</Name>
+            <Value>http://spoolman.local</Value>
+        </Variable>
+    </Environment>
+    <Ports>
+        <Port>
+            <HostPort>8080</HostPort>
+            <ContainerPort>8080</ContainerPort>
+            <Protocol>tcp</Protocol>
+        </Port>
+    </Ports>
+    <Volumes>
+        <Volume>
+            <HostDir>/mnt/user/appdata/spoolman-updater</HostDir>
+            <ContainerDir>/app/config</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Volumes>
+</Container>
