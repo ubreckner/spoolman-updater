@@ -1,7 +1,7 @@
-﻿using Gateways;
+﻿using Domain;
+using Gateways;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
-using Updater;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,11 +14,9 @@ builder.Services.AddSwaggerGen();
 
 var configuration = builder.Configuration.GetSection("Application").Get<UpdaterConfiguration>();
 
-// 🔹 Register the configuration instance as a singleton
-builder.Services.AddSingleton(configuration.Spoolman);
-builder.Services.AddSingleton(configuration.HomeAssistant);
-builder.Services.AddScoped<HomeAssistantClient>();
-builder.Services.AddScoped<SpoolmanClient>();
+builder.Services
+    .AddDomain()
+    .AddGateways(configuration);
 
 builder.Services.Configure<JsonOptions>(options =>
 {
