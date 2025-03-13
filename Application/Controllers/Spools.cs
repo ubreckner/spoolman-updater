@@ -26,7 +26,7 @@ public class SpoolsController(HomeAssistantClient homeAssistantClient, SpoolmanC
         }
     }
 
-    [HttpGet("spool")]
+    [HttpPost("spool")]
     public async Task<bool?> UpdateSpool(string name, string color, string material, string tagUid, float usedWeight)
     {
         string[] parts = name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
