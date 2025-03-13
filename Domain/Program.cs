@@ -1,9 +1,8 @@
-﻿using Gateways;
+﻿using Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Updater;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,12 +22,12 @@ builder.Configuration
 // Register services
 builder.Services.Configure<UpdaterConfiguration>(builder.Configuration.GetSection("Application"));
 
-builder.Services.AddSingleton(sp => sp.GetRequiredService<IOptions<UpdaterConfiguration>>().Value);
-builder.Services.AddSingleton(sp => sp.GetRequiredService<IOptions<UpdaterConfiguration>>().Value.HomeAssistant);
-builder.Services.AddSingleton(sp => sp.GetRequiredService<IOptions<UpdaterConfiguration>>().Value.Spoolman);
+//builder.Services.AddSingleton(sp => sp.GetRequiredService<IOptions<UpdaterConfiguration>>().Value);
+//builder.Services.AddSingleton(sp => sp.GetRequiredService<IOptions<UpdaterConfiguration>>().Value.HomeAssistant);
+//builder.Services.AddSingleton(sp => sp.GetRequiredService<IOptions<UpdaterConfiguration>>().Value.Spoolman);
 
-builder.Services.AddScoped<HomeAssistantClient>();
-builder.Services.AddScoped<SpoolmanClient>();
+//builder.Services.AddScoped<HomeAssistantClient>();
+//builder.Services.AddScoped<SpoolmanClient>();
 
 // Add controllers
 builder.Services.AddControllers();

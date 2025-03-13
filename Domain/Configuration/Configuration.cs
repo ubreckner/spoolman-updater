@@ -1,6 +1,6 @@
 ﻿using Gateways;
 
-namespace Updater;
+namespace Domain;
 
 public class UpdaterConfiguration
 {
