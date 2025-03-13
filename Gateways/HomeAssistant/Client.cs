@@ -7,6 +7,7 @@ public class HomeAssistantClient
     private readonly HttpClient _httpClient;
     private readonly string _baseUrl;
     private readonly string _token;
+    private readonly HomeAssistantConfiguration configuration;
 
     public HomeAssistantClient(HomeAssistantConfiguration configuration)
     {
@@ -15,11 +16,12 @@ public class HomeAssistantClient
 
         _httpClient = new HttpClient();
         _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_token}");
+        this.configuration = configuration;
     }
 
     public async Task<TrayInfo?> GetTrayInfoAsync(int trayIndex)
     {
-        string sensorEntity = $"sensor.x1c_00m09c422100420_ams_1_tray_{trayIndex}";
+        string sensorEntity = $"{configuration.TraySensorPrefix}{trayIndex}";
 
         var response = await _httpClient.GetFromJsonAsync<HomeAssistantState>($"{_baseUrl}/api/states/{sensorEntity}");
 

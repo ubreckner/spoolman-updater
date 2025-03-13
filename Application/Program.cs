@@ -1,5 +1,4 @@
 ﻿using Domain;
-using Gateways;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
