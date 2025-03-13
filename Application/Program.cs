@@ -1,4 +1,6 @@
 ﻿using Gateways;
+using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using Updater;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +19,11 @@ builder.Services.AddSingleton(configuration.Spoolman);
 builder.Services.AddSingleton(configuration.HomeAssistant);
 builder.Services.AddScoped<HomeAssistantClient>();
 builder.Services.AddScoped<SpoolmanClient>();
+
+builder.Services.Configure<JsonOptions>(options =>
+{
+    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower;
+});
 
 var app = builder.Build();
     

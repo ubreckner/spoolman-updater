@@ -21,21 +21,19 @@ public class SpoolsController(HomeAssistantClient homeAssistantClient, SpoolmanC
             string[] parts = trayName.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             string brand = parts.Length > 0 ? parts[0] : "Unknown";
-            string material = parts.Length > 1 ? parts[1] : "Unknown";
 
-            var spool = await spoolmanClient.GetSpoolByBrandAndColorAsync(brand, material, trayInfo.Color);
+            var spool = await spoolmanClient.GetSpoolByBrandAndColorAsync(brand, trayInfo.Type, trayInfo.Color, trayInfo.TagUid);
         }
     }
 
     [HttpGet("spool")]
-    public async Task<bool?> UpdateSpool(string name, string color, float usedWeight)
+    public async Task<bool?> UpdateSpool(string name, string color, string material, string tagUid, float usedWeight)
     {
         string[] parts = name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
         string brand = parts.Length > 0 ? parts[0] : "Unknown";
-        string material = parts.Length > 1 ? parts[1] : "Unknown";
 
-        var spool = await spoolmanClient.GetSpoolByBrandAndColorAsync(brand, material, color);
+        var spool = await spoolmanClient.GetSpoolByBrandAndColorAsync(brand, material, color, tagUid);
         if (spool == null)
             return null;
 
