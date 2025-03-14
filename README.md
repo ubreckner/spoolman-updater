@@ -4,6 +4,8 @@
 
 The Spoolman Updater API provides endpoints to manage spool updates, including tracking filament usage and material details. This API is designed to work with Home Assistant and other automation systems.
 
+To facilitate API development and testing, the Spoolman Updater API utilizes Swagger for interactive API documentation. You can access the Swagger UI at http://<your-server>:8088/swagger, which allows you to explore and test the available endpoints.
+
 ## Base URL
 
 ```
@@ -65,7 +67,7 @@ docker build -t spoolman-updater .
 ### **Run the container**
 
 ```
-docker run -d -p 8088:8088 \
+docker run -d -p 8088:8080 \
   -e APPLICATION__HOMEASSISTANT__URL=http://homeassistant.local \
   -e APPLICATION__HOMEASSISTANT__TOKEN=your-token \
   -e APPLICATION__SPOOLMAN__URL=http://spoolman.local \
