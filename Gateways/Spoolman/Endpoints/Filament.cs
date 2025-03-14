@@ -1,9 +1,9 @@
-﻿using System.Net.Http.Json;
-
-namespace Gateways;
+﻿namespace Gateways;
 
 internal class FilamentSpoolManEndoint(SpoolmanConfiguration configuration) : SpoolmanEndoint<Filament>(configuration), IFilamentEndpoint
 {
+    protected override string Endpoint => "filament";
+
     // Get or create a vendor
     public async Task<Filament> GetOrCreateFilament(Vendor vendor, string color, string material)
     {
@@ -28,25 +28,16 @@ internal class FilamentSpoolManEndoint(SpoolmanConfiguration configuration) : Sp
             Weight = 1000
         };
 
-        var createFilamentResponse = await HttpClient.PostAsJsonAsync("filament", newFilament, JsonOptions);
-
-        if (!createFilamentResponse.IsSuccessStatusCode)
-        {
-            return null; // Filament creation failed
-        }
-
-        return await createFilamentResponse.Content.ReadFromJsonAsync<Filament>();
+        return await PostAsync(newFilament);
     }
 
     private async Task<Filament?> GetFilament(string vendorName, string color, string material)
     {
-        var filamentResponse = await HttpClient.GetFromJsonAsync<List<Filament>>(
-                    $"filament?vendor.name={vendorName}&color_hex={color}&material={material}", JsonOptions
-                );
+        var filaments = await GetAllAsync($"vendor.name={vendorName}&color_hex={color}&material={material}");
 
         Filament? filament = null;
-        if (filamentResponse != null && filamentResponse.Any())
-            filament = filamentResponse.FirstOrDefault(filament => filament.ColorHex == color);
+        if (filaments != null && filaments.Any())
+            filament = filaments.FirstOrDefault(filament => filament.ColorHex == color);
 
         return filament;
     }

@@ -1,13 +1,13 @@
-﻿using System.Net.Http.Json;
-
-namespace Gateways;
+﻿namespace Gateways;
 
 internal class VendorSpoolManEndoint(SpoolmanConfiguration configuration) : SpoolmanEndoint<Vendor>(configuration), IVendorEndpoint
 {
+    protected override string Endpoint => "vendor";
+
     // Get or create a vendor
     public async Task<Vendor> GetOrCreate(string name)
     {
-        var vendorResponse = await HttpClient.GetFromJsonAsync<List<Vendor>>($"vendor?name={name}", JsonOptions);
+        var vendorResponse = await GetAllAsync($"name={name}");
 
         Vendor? vendor;
         if (vendorResponse != null && vendorResponse.Any())
@@ -19,9 +19,7 @@ internal class VendorSpoolManEndoint(SpoolmanConfiguration configuration) : Spoo
                 Name = name
             };
 
-            var createVendorResponse = await HttpClient.PostAsJsonAsync("vendor", newVendor, JsonOptions);
-
-            vendor = createVendorResponse.IsSuccessStatusCode ? await createVendorResponse.Content.ReadFromJsonAsync<Vendor>() : null;
+            vendor = await PostAsync(newVendor);
         }
 
         return vendor ?? throw new InvalidOperationException("Failed to create or retrieve vendor.");

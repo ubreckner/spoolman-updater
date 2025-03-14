@@ -16,6 +16,8 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndoint<Spool>, ISpoolEndpoint
         this.filamentEndpoint = filamentEndpoint;
     }
 
+    protected override string Endpoint => "spool";
+
     public async Task<Spool> GetOrCreateSpool(string brand, string material, string color, string tagUid)
     {
         // TODO Mapping
@@ -30,7 +32,7 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndoint<Spool>, ISpoolEndpoint
             query += $"&filament.material={material}";
         }
 
-        var allBrandSpools = await HttpClient.GetFromJsonAsync<List<Spool>>($"spool?{query}", JsonOptions);
+        var allBrandSpools = await GetAllAsync(query);
 
         Spool? matchingSpool = null;
         if (allBrandSpools != null && allBrandSpools.Any())
@@ -46,7 +48,7 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndoint<Spool>, ISpoolEndpoint
     public async Task<bool> UseSpoolWeight(int spoolId, float usedWeight)
     {
         var payload = new { use_weight = usedWeight };
-        var response = await HttpClient.PutAsJsonAsync($"spool/{spoolId}/use", payload);
+        var response = await HttpClient.PutAsJsonAsync($"{Endpoint}/{spoolId}/use", payload);
 
         return response.IsSuccessStatusCode;
     }
@@ -65,13 +67,6 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndoint<Spool>, ISpoolEndpoint
             SpoolWeight = 250
         };
 
-        var createResponse = await HttpClient.PostAsJsonAsync($"spool", newSpool, JsonOptions);
-
-        if (createResponse.IsSuccessStatusCode)
-        {
-            return await createResponse.Content.ReadFromJsonAsync<Spool>();  // Return the created spool
-        }
-
-        return null;
+        return await PostAsync(newSpool);
     }
 }

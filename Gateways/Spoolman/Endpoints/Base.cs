@@ -1,13 +1,16 @@
-﻿using System.Text.Json;
+﻿using System.Net.Http.Json;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Gateways;
 
-internal class SpoolmanEndoint<TSpoolmanEntity> : ISpoolmanEndpoint<TSpoolmanEntity>
+internal abstract class SpoolmanEndoint<TSpoolmanEntity> : ISpoolmanEndpoint<TSpoolmanEntity>
     where TSpoolmanEntity : class
 {
     protected readonly HttpClient HttpClient;
     protected readonly JsonSerializerOptions JsonOptions;
+
+    protected abstract string Endpoint { get; }
 
     public SpoolmanEndoint(SpoolmanConfiguration configuration)
     {
@@ -20,5 +23,15 @@ internal class SpoolmanEndoint<TSpoolmanEntity> : ISpoolmanEndpoint<TSpoolmanEnt
             PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
             DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
         };
+    }
+
+    public async Task<List<TSpoolmanEntity>?> GetAllAsync(string query = "") =>
+        await HttpClient.GetFromJsonAsync<List<TSpoolmanEntity>>($"{Endpoint}?{query}", JsonOptions);
+
+    public async Task<TSpoolmanEntity?> PostAsync(TSpoolmanEntity newEntity)
+    {
+        var createVendorResponse = await HttpClient.PostAsJsonAsync(Endpoint, newEntity, JsonOptions);
+
+        return createVendorResponse.IsSuccessStatusCode ? await createVendorResponse.Content.ReadFromJsonAsync<TSpoolmanEntity>() : null;
     }
 }
