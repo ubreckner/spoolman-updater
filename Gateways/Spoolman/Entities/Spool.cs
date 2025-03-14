@@ -1,6 +1,5 @@
 ﻿namespace Gateways;
 
-
 using System.Collections.Generic;
 
 public class Spool
