@@ -8,6 +8,7 @@ internal sealed class UpdateAllSpoolsUseCase(HomeAssistantClient homeAssistantCl
     {
         var trayInfos = await homeAssistantClient.GetAllTrayInfoAsync();
 
+        List<Spool> spools = new();
         foreach (var trayInfo in trayInfos)
         {
             if (trayInfo == null)
@@ -19,8 +20,10 @@ internal sealed class UpdateAllSpoolsUseCase(HomeAssistantClient homeAssistantCl
             string brand = parts.Length > 0 ? parts[0] : "Unknown";
 
             var spool = await spoolmanClient.GetSpoolByBrandAndColorAsync(brand, trayInfo.Type, trayInfo.Color, trayInfo.TagUid);
+
+            spools.Add(spool);
         }
 
-        return new UpdateAllSpoolsOutput();
+        return new UpdateAllSpoolsOutput(spools);
     }
 }

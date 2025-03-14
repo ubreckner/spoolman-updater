@@ -28,6 +28,7 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddGateways(this IServiceCollection services, UpdaterConfiguration configuration) =>
         services
+            .AddServices(typeof(ISpoolmanEndpoint<>), typeof(SpoolmanClient).Assembly, ServiceLifetime.Scoped)
             .AddSingleton(configuration.Spoolman)
             .AddSingleton(configuration.HomeAssistant)
             .AddScoped<HomeAssistantClient>()
