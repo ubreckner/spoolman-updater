@@ -107,8 +107,8 @@ rest_command:
       {
         "name": "{{ name }}",
         "material": "{{ material }}",
-        "tagUid": "{{ tag_uid }}",
-        "usedWeight": {{ used_weight }},
+        "tag_uid": "{{ tag_uid }}",
+        "used_weight": {{ used_weight }},
         "color": "{{ color }}"
       }
 ```
