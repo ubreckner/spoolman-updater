@@ -77,6 +77,7 @@ The API requires the following environment variables to be set:
 ```
 APPLICATION__HOMEASSISTANT__URL=http://homeassistant.local
 APPLICATION__HOMEASSISTANT__TOKEN=your-token
+APPLICATION__HOMEASSISTANT__TRAYSENSORPREFIX=sensor.x1c_tray_sensor_
 APPLICATION__SPOOLMAN__URL=http://spoolman.local
 ```
 
@@ -95,6 +96,7 @@ docker run -d -p 8088:8088 \
   -e APPLICATION__HOMEASSISTANT__URL=http://homeassistant.local \
   -e APPLICATION__HOMEASSISTANT__TOKEN=your-token \
   -e APPLICATION__SPOOLMAN__URL=http://spoolman.local \
+  -e APPLICATION__HOMEASSISTANT__TRAYSENSORPREFIX=sensor.x1c_tray_sensor_ \
   --name spoolman-updater spoolman-updater
 ```
 
