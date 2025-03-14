@@ -43,33 +43,6 @@ Updates the spool details based on filament usage.
 
 ---
 
-### 2. Get Spool by Brand and Color
-
-#### **Endpoint:**
-
-```
-GET /spools/brand/{brand}/color/{color}
-```
-
-#### **Description:**
-
-Fetches a spool based on brand and color.
-
-#### **Response:**
-
-```json
-{
-  "id": 1,
-  "name": "Bambu PLA Basic",
-  "brand": "Bambu",
-  "material": "PLA",
-  "color": "#FFFFFFFF",
-  "weight": 750
-}
-```
-
----
-
 ## Environment Variables
 
 The API requires the following environment variables to be set:
@@ -112,6 +85,67 @@ The API logs requests and responses using the default ASP.NET logging system. Yo
   }
 }
 ```
+
+---
+
+## Using with Home Assistant
+The Spoolman Updater API can be integrated into Home Assistant automations to track filament usage automatically.
+
+### **1. Define a REST Command in `configuration.yaml`**
+Add the following to your `configuration.yaml` to create a REST command that updates the spool:
+
+```yaml
+rest_command:
+  update_spool:
+    url: "http://<your-server>:8088/spool"
+    method: POST
+    headers:
+      Content-Type: "application/json"
+    payload: >
+      {
+        "name": "{{ name }}",
+        "material": "{{ material }}",
+        "tagUid": "{{ tag_uid }}",
+        "usedWeight": {{ used_weight }},
+        "color": "{{ color }}"
+      }
+```
+
+### **2. Create an Automation**
+The following automation updates the spool when a print finishes or when the AMS tray switches:
+
+```yaml
+alias: Update Spool When Print Finishes or Tray Switches
+trigger:
+  - platform: state
+    entity_id: sensor.x1c_print_status
+    to: "idle"
+  - platform: state
+    entity_id: sensor.x1c_active_tray_index
+condition:
+  - condition: template
+    value_template: "{{ states('sensor.x1c_active_tray_index') | int > 0 }}"
+action:
+  - variables:
+      tray_number: "{{ trigger.to_state.state if trigger.entity_id == 'sensor.x1c_active_tray_index' else states('sensor.x1c_active_tray_index') }}"
+      tray_sensor: "sensor.x1c_ams_tray_{{ tray_number }}"
+      tray_weight: "{{ state_attr('sensor.x1c_print_weight', 'AMS 1 Tray ' ~ tray_number) | float(0) }}"
+      tag_uid: "{{ state_attr(tray_sensor, 'tag_uid') }}"
+      material: "{{ state_attr(tray_sensor, 'type') }}"
+      name: "{{ state_attr(tray_sensor, 'name') }}"
+      color: "{{ state_attr(tray_sensor, 'color') }}"
+  - service: rest_command.update_spool
+    data:
+      name: "{{ name }}"
+      material: "{{ material }}"
+      tag_uid: "{{ tag_uid }}"
+      used_weight: "{{ tray_weight }}"
+      color: "{{ color }}"
+```
+
+This automation ensures that the filament usage is automatically updated in Spoolman when a print is completed or the AMS tray is changed.
+
+---
 
 ## Contributing
 
