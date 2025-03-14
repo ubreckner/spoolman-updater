@@ -99,7 +99,7 @@ Add the following to your `configuration.yaml` to create a REST command that upd
 ```yaml
 rest_command:
   update_spool:
-    url: "http://<your-server>:8088/spool"
+    url: "http://<your-server>:8088/Spools/spool"
     method: POST
     headers:
       Content-Type: "application/json"
