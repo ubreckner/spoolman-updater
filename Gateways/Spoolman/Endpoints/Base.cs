@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Gateways;
 
-internal abstract class SpoolmanEndoint<TSpoolmanEntity> : ISpoolmanEndpoint<TSpoolmanEntity>
+internal abstract class SpoolmanEndpoint<TSpoolmanEntity> : ISpoolmanEndpoint<TSpoolmanEntity>
     where TSpoolmanEntity : class
 {
     protected readonly HttpClient HttpClient;
@@ -12,7 +12,7 @@ internal abstract class SpoolmanEndoint<TSpoolmanEntity> : ISpoolmanEndpoint<TSp
 
     protected abstract string Endpoint { get; }
 
-    public SpoolmanEndoint(SpoolmanConfiguration configuration)
+    public SpoolmanEndpoint(SpoolmanConfiguration configuration)
     {
         HttpClient = new HttpClient();
         HttpClient.BaseAddress = new Uri($"{configuration.Url}/api/v1/");
@@ -25,8 +25,8 @@ internal abstract class SpoolmanEndoint<TSpoolmanEntity> : ISpoolmanEndpoint<TSp
         };
     }
 
-    public async Task<List<TSpoolmanEntity>?> GetAllAsync(string query = "") =>
-        await HttpClient.GetFromJsonAsync<List<TSpoolmanEntity>>($"{Endpoint}?{query}", JsonOptions);
+    public async Task<List<TSpoolmanEntity>?> GetAllAsync(string query = "", bool useQueryParams = true) =>
+        await HttpClient.GetFromJsonAsync<List<TSpoolmanEntity>>($"{Endpoint}{(useQueryParams ? "?" : string.Empty)}{query}", JsonOptions);
 
     public async Task<TSpoolmanEntity?> PostAsync(TSpoolmanEntity newEntity)
     {

@@ -21,3 +21,8 @@ public interface ISpoolEndpoint
 
     Task<bool> UseSpoolWeight(int spoolId, float usedWeight);
 }
+
+public interface IFieldEndpoint
+{
+    Task<bool> CheckFieldExistence();
+}

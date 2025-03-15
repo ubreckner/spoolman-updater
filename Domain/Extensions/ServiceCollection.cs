@@ -32,5 +32,6 @@ public static class ServiceCollectionExtensions
             .AddSingleton(configuration.Spoolman)
             .AddSingleton(configuration.HomeAssistant)
             .AddScoped<HomeAssistantClient>()
-            .AddScoped<SpoolmanClient>();
+            .AddScoped<SpoolmanClient>()
+            .AddScoped<GatewayChecker>();
 }

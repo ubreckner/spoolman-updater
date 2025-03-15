@@ -2,7 +2,7 @@
 
 namespace Gateways;
 
-internal class SpoolSpoolmanEndoint : SpoolmanEndoint<Spool>, ISpoolEndpoint
+internal class SpoolSpoolmanEndoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
 {
     private readonly IVendorEndpoint vendorEndpoint;
     private readonly IFilamentEndpoint filamentEndpoint;
@@ -21,7 +21,7 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndoint<Spool>, ISpoolEndpoint
     public async Task<Spool> GetOrCreateSpool(string brand, string material, string color, string tagUid)
     {
         // TODO Mapping
-        if (string.IsNullOrEmpty(tagUid) || tagUid == "0000000000000000" && brand == "Bambu")
+        if (Spool.IsEmptyTag(tagUid) && brand == "Bambu")
             brand = "Sunlu";
 
         // Fetch all spools from Spoolman
@@ -40,7 +40,7 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndoint<Spool>, ISpoolEndpoint
             matchingSpool = allBrandSpools.FirstOrDefault(spool => color.StartsWith($"#{spool.Filament.ColorHex}", StringComparison.OrdinalIgnoreCase) == true);
         }
 
-        matchingSpool ??= await CreateSpoolAsync(brand, color.Substring(1, 6), material);
+        matchingSpool ??= await CreateSpoolAsync(brand, color.Substring(1, 6), material, tagUid);
 
         return matchingSpool;
     }
@@ -53,7 +53,7 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndoint<Spool>, ISpoolEndpoint
         return response.IsSuccessStatusCode;
     }
 
-    private async Task<Spool?> CreateSpoolAsync(string vendorName, string color, string material)
+    private async Task<Spool?> CreateSpoolAsync(string vendorName, string color, string material, string tagUid)
     {
         var vendor = await vendorEndpoint.GetOrCreate(vendorName);
 
@@ -64,7 +64,11 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndoint<Spool>, ISpoolEndpoint
             FilamentId = filament.Id,
             InitialWeight = 1000,  // Default values, adjust as needed
             RemainingWeight = 1000,
-            SpoolWeight = 250
+            SpoolWeight = 250,
+            Extra = !Spool.IsEmptyTag(tagUid) ? new Dictionary<string, string>
+            {
+                { "tag", "0000000000000000" }
+            } : new()
         };
 
         return await PostAsync(newSpool);

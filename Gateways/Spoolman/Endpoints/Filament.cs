@@ -1,6 +1,6 @@
 ﻿namespace Gateways;
 
-internal class FilamentSpoolManEndoint(SpoolmanConfiguration configuration) : SpoolmanEndoint<Filament>(configuration), IFilamentEndpoint
+internal class FilamentSpoolManEndoint(SpoolmanConfiguration configuration) : SpoolmanEndpoint<Filament>(configuration), IFilamentEndpoint
 {
     protected override string Endpoint => "filament";
 

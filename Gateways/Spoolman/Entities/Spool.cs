@@ -22,4 +22,6 @@ public class Spool
     public string Comment { get; set; }
     public bool Archived { get; set; }
     public Dictionary<string, string> Extra { get; set; }
+
+    public static bool IsEmptyTag(string tagUid) => string.IsNullOrEmpty(tagUid) || tagUid == "0000000000000000";
 }

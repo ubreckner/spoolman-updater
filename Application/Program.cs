@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Gateways;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
@@ -31,5 +32,13 @@ app.UseSwaggerUI();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.Lifetime.ApplicationStarted.Register(async () =>
+{
+    using var scope = app.Services.CreateScope();
+    var gatewayChecker = scope.ServiceProvider.GetRequiredService<GatewayChecker>();
+
+    await gatewayChecker.CheckGatewayConnectionAsync();
+});
 
 app.Run();

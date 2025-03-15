@@ -1,6 +1,8 @@
-﻿namespace Gateways;
+﻿using System.Net.Http.Json;
 
-internal class VendorSpoolManEndoint(SpoolmanConfiguration configuration) : SpoolmanEndoint<Vendor>(configuration), IVendorEndpoint
+namespace Gateways;
+
+internal class VendorSpoolmanEndoint(SpoolmanConfiguration configuration) : SpoolmanEndpoint<Vendor>(configuration), IVendorEndpoint
 {
     protected override string Endpoint => "vendor";
 

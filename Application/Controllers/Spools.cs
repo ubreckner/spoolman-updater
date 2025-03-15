@@ -11,7 +11,7 @@ public class SpoolsController(IInputHandler handler) : ControllerBase
     public async Task<IActionResult> UpdateAll() =>
         Ok(await handler.HandleAsync(new UpdateAllSpoolsInput()));
 
-    [HttpPost("spool")]
+    [HttpPost]
     public async Task<IActionResult> Update([FromBody] UpdateSpoolInput input) =>
         Ok(await handler.HandleAsync(input));
 }
