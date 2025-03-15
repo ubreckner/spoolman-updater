@@ -37,7 +37,11 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
         Spool? matchingSpool = null;
         if (allBrandSpools != null && allBrandSpools.Any())
         {
-            matchingSpool = allBrandSpools.FirstOrDefault(spool => color.StartsWith($"#{spool.Filament.ColorHex}", StringComparison.OrdinalIgnoreCase) == true);
+            var colorMatchingSpools = allBrandSpools.Where(spool => color.StartsWith($"#{spool.Filament.ColorHex}", StringComparison.OrdinalIgnoreCase) == true);
+
+            matchingSpool = !Spool.IsEmptyTag(tagUid) 
+                ? colorMatchingSpools.FirstOrDefault(spool => spool.Extra["tag"] == tagUid)
+                : colorMatchingSpools.FirstOrDefault();
         }
 
         matchingSpool ??= await CreateSpoolAsync(brand, color.Substring(1, 6), material, tagUid);
