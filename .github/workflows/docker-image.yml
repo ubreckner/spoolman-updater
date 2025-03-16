@@ -28,12 +28,6 @@ jobs:
       - name: Run unit tests and generate report
         run: dotnet test --logger "trx;LogFileName=test_results.trx" --results-directory ./TestResults
 
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          files: ./TestResults/test_results.trx
-
       - name: Upload test results
         uses: dorny/test-reporter@v1
         with:
