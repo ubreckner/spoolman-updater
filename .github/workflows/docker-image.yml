@@ -28,11 +28,12 @@ jobs:
       - name: Run unit tests and generate report
         run: dotnet test --logger "trx;LogFileName=test_results.trx" --results-directory ./TestResults
 
-      - name: Publish test results
-        uses: actions/upload-artifact@v2
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
         with:
-          name: test-results
-          path: ./TestResults/test_results.trx
+          files: |
+            /TestResults/**/*.trx
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
