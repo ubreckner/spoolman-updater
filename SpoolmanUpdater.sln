@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", ".\Domain\Domain.csproj", "{BCF03506-D0BC-42BA-A0EE-CE1E4D964E25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{BCF03506-D0BC-42BA-A0EE-CE1E4D964E25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateways", ".\Gateways\Gateways.csproj", "{DC155AA7-E20D-4D7E-958A-447A95EFABC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateways", "Gateways\Gateways.csproj", "{DC155AA7-E20D-4D7E-958A-447A95EFABC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", ".\Application\Application.csproj", "{D6B368CA-2CBE-4C71-9AB4-0A9FD6F43B3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{D6B368CA-2CBE-4C71-9AB4-0A9FD6F43B3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateways.Tests", "Gateways.Tests\Gateways.Tests.csproj", "{8B8CC01A-B675-4461-B71F-2DBC195FB64D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D6B368CA-2CBE-4C71-9AB4-0A9FD6F43B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6B368CA-2CBE-4C71-9AB4-0A9FD6F43B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6B368CA-2CBE-4C71-9AB4-0A9FD6F43B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B8CC01A-B675-4461-B71F-2DBC195FB64D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B8CC01A-B675-4461-B71F-2DBC195FB64D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B8CC01A-B675-4461-B71F-2DBC195FB64D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B8CC01A-B675-4461-B71F-2DBC195FB64D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

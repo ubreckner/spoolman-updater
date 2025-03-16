@@ -20,7 +20,7 @@ internal class FilamentSpoolManEndoint(SpoolmanConfiguration configuration) : Sp
         var newFilament = new Filament
         {
             Name = Filament.GetNearestColorName($"#{color}"),  // Default name, adjust as needed
-            VendorId = vendor.Id,
+            VendorId = vendor.Id.Value,
             ColorHex = color,
             Material = material,  // Default material, adjust as needed
             Diameter = 1.75,
