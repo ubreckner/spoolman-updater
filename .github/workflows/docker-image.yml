@@ -17,6 +17,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Run unit tests and generate report
+        run: dotnet test --logger "trx;LogFileName=test_results.trx" --results-directory ./TestResults
+
+      - name: Publish test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: ./TestResults/test_results.trx
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
