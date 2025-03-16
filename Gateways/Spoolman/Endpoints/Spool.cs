@@ -40,7 +40,7 @@ internal class SpoolSpoolmanEndpoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
             var colorMatchingSpools = allBrandSpools.Where(spool => color.StartsWith($"#{spool.Filament.ColorHex}", StringComparison.OrdinalIgnoreCase) == true);
 
             matchingSpool = !Spool.IsEmptyTag(tagUid) 
-                ? colorMatchingSpools.FirstOrDefault(spool => spool.Extra["tag"] == tagUid)
+                ? colorMatchingSpools.FirstOrDefault(spool => spool.Extra.ContainsKey("tag") && spool.Extra["tag"] == tagUid)
                 : colorMatchingSpools.FirstOrDefault();
         }
 
