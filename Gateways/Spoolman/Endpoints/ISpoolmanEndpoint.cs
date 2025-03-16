@@ -12,7 +12,7 @@ public interface IVendorEndpoint
 
 public interface IFilamentEndpoint
 {
-    Task<Filament> GetOrCreateFilament(Vendor vendor, string color, string material);
+    Task<Filament> GetOrCreate(Vendor vendor, string color, string material);
 }
 
 public interface ISpoolEndpoint

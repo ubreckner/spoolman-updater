@@ -2,12 +2,12 @@
 
 namespace Gateways;
 
-internal class SpoolSpoolmanEndoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
+internal class SpoolSpoolmanEndpoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
 {
     private readonly IVendorEndpoint vendorEndpoint;
     private readonly IFilamentEndpoint filamentEndpoint;
 
-    public SpoolSpoolmanEndoint(
+    public SpoolSpoolmanEndpoint(
         SpoolmanConfiguration configuration,
         IVendorEndpoint vendorEndpoint,
         IFilamentEndpoint filamentEndpoint) : base(configuration)
@@ -25,11 +25,11 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
             brand = "Sunlu";
 
         // Fetch all spools from Spoolman
-        var query = $"filament.vendor.name={brand}";
+        var query = $"{FilamentQueryConstants.VendorName}={brand}";
 
         if (!string.IsNullOrEmpty(material))
         {
-            query += $"&filament.material={material}";
+            query += $"&{FilamentQueryConstants.Material}={material}";
         }
 
         var allBrandSpools = await GetAllAsync(query);
@@ -61,7 +61,7 @@ internal class SpoolSpoolmanEndoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
     {
         var vendor = await vendorEndpoint.GetOrCreate(vendorName);
 
-        var filament = await filamentEndpoint.GetOrCreateFilament(vendor, color, material);
+        var filament = await filamentEndpoint.GetOrCreate(vendor, color, material);
 
         var newSpool = new Spool
         {

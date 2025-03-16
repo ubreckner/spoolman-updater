@@ -5,7 +5,7 @@ internal class FilamentSpoolManEndoint(SpoolmanConfiguration configuration) : Sp
     protected override string Endpoint => "filament";
 
     // Get or create a vendor
-    public async Task<Filament> GetOrCreateFilament(Vendor vendor, string color, string material)
+    public async Task<Filament> GetOrCreate(Vendor vendor, string color, string material)
     {
         Filament? filament = await GetFilament(vendor.Name, color, material);
 

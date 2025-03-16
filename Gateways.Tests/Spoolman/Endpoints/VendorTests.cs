@@ -3,7 +3,6 @@ using RichardSzalay.MockHttp;
 
 namespace Gateways.Tests
 {
-
     internal class VendorTests : EndpointTest<VendorSpoolmanEndpoint>
     {
         [Test]
@@ -27,18 +26,20 @@ namespace Gateways.Tests
             result.Should().NotBeNull();
             result.Name.Should().Be("Vendor1");
         }
+
         public override void SetupHttpClient(MockHttpMessageHandler mockHandler)
         {
             mockHandler
-               .When("http://localhost:8080/api/v1/vendor")
+               .When("/api/v1/vendor")
                .WithQueryString("name", "Vendor1")
                .Respond("application/json", "[{\"id\":1,\"registered\":\"2025-03-10T20:38:35Z\",\"name\":\"Vendor1\",\"external_id\":\"Vendor\",\"extra\":{}}]");
 
             mockHandler
-               .When("http://localhost:8080/api/v1/vendor?name=Vendor2")
+               .When("/api/v1/vendor")
+               .WithQueryString("name", "Vendor2")
                .Respond("application/json", "[]");
 
-            mockHandler.When("http://localhost:8080/api/v1/vendor")
+            mockHandler.When("/api/v1/vendor")
                 .WithContent("{\"name\":\"Vendor2\"}")
                 .Respond("application/json", "{\"id\":2,\"registered\":\"2025-03-10T20:38:35Z\",\"name\":\"Vendor2\",\"external_id\":\"Vendor2\",\"extra\":{}}");
         }
