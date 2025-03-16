@@ -1,6 +1,6 @@
 ﻿namespace Gateways;
 
-internal class FilamentSpoolManEndoint(SpoolmanConfiguration configuration) : SpoolmanEndpoint<Filament>(configuration), IFilamentEndpoint
+internal class FilamentSpoolManEndpoint(SpoolmanConfiguration configuration) : SpoolmanEndpoint<Filament>(configuration), IFilamentEndpoint
 {
     protected override string Endpoint => "filament";
 
@@ -13,7 +13,6 @@ internal class FilamentSpoolManEndoint(SpoolmanConfiguration configuration) : Sp
 
         return filament ?? throw new InvalidOperationException("Failed to create or retrieve filament.");
     }
-
 
     private async Task<Filament?> CreateFilament(string color, string material, Vendor vendor)
     {
@@ -33,7 +32,7 @@ internal class FilamentSpoolManEndoint(SpoolmanConfiguration configuration) : Sp
 
     private async Task<Filament?> GetFilament(string vendorName, string color, string material)
     {
-        var filaments = await GetAllAsync($"vendor.name={vendorName}&color_hex={color}&material={material}");
+        var filaments = await GetAllAsync($"{FilamentQueryConstants.VendorName}={vendorName}&{FilamentQueryConstants.ColorHex}={color}&{FilamentQueryConstants.Material}={material}");
 
         Filament? filament = null;
         if (filaments != null && filaments.Any())

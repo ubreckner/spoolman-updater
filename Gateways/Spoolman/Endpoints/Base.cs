@@ -30,6 +30,7 @@ internal abstract class SpoolmanEndpoint<TSpoolmanEntity> : ISpoolmanEndpoint<TS
 
     public async Task<TSpoolmanEntity?> PostAsync(TSpoolmanEntity newEntity)
     {
+        var json = JsonSerializer.Serialize(newEntity, JsonOptions);
         var createVendorResponse = await HttpClient.PostAsJsonAsync(Endpoint, newEntity, JsonOptions);
 
         return createVendorResponse.IsSuccessStatusCode ? await createVendorResponse.Content.ReadFromJsonAsync<TSpoolmanEntity>() : null;

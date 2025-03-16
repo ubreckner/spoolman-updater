@@ -11,6 +11,16 @@ namespace Gateways.Tests
         private Filament filament = new Filament() { Id = 2, Name = "Vendor1", Material = "PLA", ColorHex = "FFFF00", Vendor = new Vendor() { Id = 1, Name = "Vendor1" } };
 
         [Test]
+        public async Task GivenIdAndWeight_WhenUseSpoolWeight_ShouldReturnTrue()
+        {
+            // Arrange & Act
+            var result = await Endpoint.UseSpoolWeight(2, 100);
+
+            // Assert   
+            result.Should().BeTrue();
+        }
+
+        [Test]
         public async Task GivenNonExistingSpool_WhenGetOrCreate_CreatedSpoolShouldBeReturned()
         {
             // Arrange & Act
@@ -40,14 +50,14 @@ namespace Gateways.Tests
         {
             mockHandler
                .When("/api/v1/spool")
-               .WithQueryString(FilamentQueryConstants.VendorName, "Vendor1")
-               .WithQueryString(FilamentQueryConstants.Material, "PLA")
+               .WithQueryString(FilamentQueryConstants.FilamentVendorName, "Vendor1")
+               .WithQueryString(FilamentQueryConstants.FilamentMaterial, "PLA")
                .Respond("application/json", "[{\"id\":1,\"registered\":\"2025-03-15T15:17:59Z\",\"first_used\":\"2025-03-15T15:17:59Z\",\"last_used\":\"2025-03-15T15:17:59Z\",\"filament\":{\"id\":1,\"registered\":\"2025-03-15T15:17:59Z\",\"name\":\"Black\",\"vendor\":{\"id\":1,\"registered\":\"2025-03-10T20:38:35Z\",\"name\":\"Vendor1\",\"external_id\":\"Vendor1\",\"extra\":{}},\"material\":\"Empty\",\"price\":0.0,\"density\":1.24,\"diameter\":1.75,\"weight\":1000.0,\"spool_weight\":0.0,\"color_hex\":\"000000\",\"extra\":{}},\"remaining_weight\":1000.0,\"initial_weight\":1000.0,\"spool_weight\":250.0,\"used_weight\":0.0,\"remaining_length\":335283.6194167644,\"used_length\":0.0,\"archived\":false,\"extra\":{}},{\"id\":2,\"registered\":\"2025-03-15T15:18:38Z\",\"filament\":{\"id\":2,\"registered\":\"2025-03-15T15:18:26Z\",\"name\":\"Gray\",\"vendor\":{\"id\":1,\"registered\":\"2025-03-10T20:38:35Z\",\"name\":\"Vendor1\",\"external_id\":\"Vendor1\",\"extra\":{}},\"material\":\"PLA\",\"price\":0.0,\"density\":1.24,\"diameter\":1.75,\"weight\":1000.0,\"spool_weight\":0.0,\"color_hex\":\"898989\",\"extra\":{}},\"remaining_weight\":1000.0,\"initial_weight\":1000.0,\"spool_weight\":250.0,\"used_weight\":0.0,\"remaining_length\":335283.6194167644,\"used_length\":0.0,\"archived\":false,\"extra\":{}},{\"id\":3,\"registered\":\"2025-03-15T15:18:50Z\",\"filament\":{\"id\":3,\"registered\":\"2025-03-15T15:18:49Z\",\"name\":\"Peru\",\"vendor\":{\"id\":1,\"registered\":\"2025-03-10T20:38:35Z\",\"name\":\"Vendor1\",\"external_id\":\"Vendor1\",\"extra\":{}},\"material\":\"PLA\",\"price\":0.0,\"density\":1.24,\"diameter\":1.75,\"weight\":1000.0,\"spool_weight\":0.0,\"color_hex\":\"B87333\",\"extra\":{}},\"remaining_weight\":1000.0,\"initial_weight\":1000.0,\"spool_weight\":250.0,\"used_weight\":0.0,\"remaining_length\":335283.6194167644,\"used_length\":0.0,\"archived\":false,\"extra\":{}},{\"id\":4,\"registered\":\"2025-03-15T15:18:53Z\",\"first_used\":\"2025-03-16T10:39:58Z\",\"last_used\":\"2025-03-16T10:40:10Z\",\"filament\":{\"id\":4,\"registered\":\"2025-03-15T15:18:52Z\",\"name\":\"White\",\"vendor\":{\"id\":1,\"registered\":\"2025-03-10T20:38:35Z\",\"name\":\"Vendor1\",\"external_id\":\"Vendor1\",\"extra\":{}},\"material\":\"PLA\",\"price\":0.0,\"density\":1.24,\"diameter\":1.75,\"weight\":1000.0,\"spool_weight\":0.0,\"color_hex\":\"FFFFFF\",\"extra\":{}},\"remaining_weight\":976.0,\"initial_weight\":1000.0,\"spool_weight\":250.0,\"used_weight\":24.0,\"remaining_length\":327236.812550762,\"used_length\":8046.806866002346,\"archived\":false,\"extra\":{}},{\"id\":5,\"registered\":\"2025-03-15T15:18:55Z\",\"filament\":{\"id\":5,\"registered\":\"2025-03-15T15:18:54Z\",\"name\":\"Black\",\"vendor\":{\"id\":1,\"registered\":\"2025-03-10T20:38:35Z\",\"name\":\"Vendor1\",\"external_id\":\"Vendor1\",\"extra\":{}},\"material\":\"PLA\",\"price\":0.0,\"density\":1.24,\"diameter\":1.75,\"weight\":1000.0,\"spool_weight\":0.0,\"color_hex\":\"161616\",\"extra\":{}},\"remaining_weight\":1000.0,\"initial_weight\":1000.0,\"spool_weight\":250.0,\"used_weight\":0.0,\"remaining_length\":335283.6194167644,\"used_length\":0.0,\"archived\":false,\"extra\":{}}]");
 
             mockHandler
                .When("/api/v1/spool")
-               .WithQueryString(FilamentQueryConstants.VendorName, "Vendor2")
-               .WithQueryString(FilamentQueryConstants.Material, "PLA")
+               .WithQueryString(FilamentQueryConstants.FilamentVendorName, "Vendor2")
+               .WithQueryString(FilamentQueryConstants.FilamentMaterial, "PLA")
                .Respond("application/json", "[]");
 
             mockHandler
@@ -58,6 +68,11 @@ namespace Gateways.Tests
                    Id = 6,
                    Filament = filament
                }));
+
+            mockHandler
+                .When(HttpMethod.Put, "/api/v1/spool/2/use")
+                .WithContent("{\"use_weight\":100}")
+                .Respond("application/json", "");
         }
 
         public override void SetupConstructorArguments()

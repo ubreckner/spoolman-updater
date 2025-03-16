@@ -25,11 +25,11 @@ internal class SpoolSpoolmanEndpoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
             brand = "Sunlu";
 
         // Fetch all spools from Spoolman
-        var query = $"{FilamentQueryConstants.VendorName}={brand}";
+        var query = $"{FilamentQueryConstants.FilamentVendorName}={brand}";
 
         if (!string.IsNullOrEmpty(material))
         {
-            query += $"&{FilamentQueryConstants.Material}={material}";
+            query += $"&{FilamentQueryConstants.FilamentMaterial}={material}";
         }
 
         var allBrandSpools = await GetAllAsync(query);
