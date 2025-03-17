@@ -75,8 +75,8 @@ namespace Gateways.Tests
                .Respond("application/json", "[]");
 
             mockHandler
-               .When("/api/v1/spool")
-               .WithContent("{\"id\":0,\"filament_id\":2,\"remaining_weight\":1000,\"initial_weight\":1000,\"spool_weight\":250,\"used_length\":0,\"archived\":false,\"extra\":{}}")
+               .When(HttpMethod.Post, "/api/v1/spool")
+               .WithContent("{\"filament_id\":2,\"remaining_weight\":1000,\"initial_weight\":1000,\"spool_weight\":250,\"used_length\":0,\"archived\":false,\"extra\":{}}")
                .Respond("application/json", JsonSerializer.Serialize(new Spool()
                {
                    Id = 6,

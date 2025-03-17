@@ -6,7 +6,7 @@ internal static class FilamentQueryConstants
 
     public static string FilamentVendorName => $"{Prefix}.{VendorName}";
 
-    public static string FilamentMaterial = $"{Prefix}.{Material}";
+    public static string FilamentMaterial => $"{Prefix}.{Material}";
 
     public static string ColorHex = "color_hex";
     public static string Material = "material";
