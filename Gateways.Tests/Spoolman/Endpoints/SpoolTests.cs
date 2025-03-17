@@ -44,6 +44,7 @@ namespace Gateways.Tests
             result.Filament.Vendor.Name.Should().Be("Vendor1");
             result.Filament.Material.Should().Be("Empty");
             result.Filament.ColorHex.Should().Be("000000");
+            result.Extra["tag"].Should().Be("tag1");
         }
 
         [Test]

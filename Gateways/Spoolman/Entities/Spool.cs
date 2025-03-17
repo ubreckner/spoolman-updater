@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Spool
 {
-    public int Id { get; set; }
+    public int? Id { get; set; }
     public string Registered { get; set; }
     public string FirstUsed { get; set; }
     public string LastUsed { get; set; }

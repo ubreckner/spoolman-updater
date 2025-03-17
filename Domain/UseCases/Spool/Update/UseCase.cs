@@ -14,7 +14,7 @@ internal sealed class UpdateSpoolUseCase(SpoolmanClient spoolmanClient) : IUseCa
         if (spool == null)
             return new UpdateSpoolOutput(false);
 
-        var success = await spoolmanClient.UseSpoolWeightAsync(spool.Id, input.UsedWeight);
+        var success = await spoolmanClient.UseSpoolWeightAsync(spool.Id.Value, input.UsedWeight);
 
         return new UpdateSpoolOutput(success);
     }

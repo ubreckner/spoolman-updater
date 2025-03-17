@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace Gateways;
 
@@ -71,7 +72,7 @@ internal class SpoolSpoolmanEndpoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
             SpoolWeight = 250,
             Extra = !Spool.IsEmptyTag(tagUid) ? new Dictionary<string, string>
             {
-                { "tag", "0000000000000000" }
+                { "tag", JsonSerializer.Serialize(tagUid, JsonOptions) }
             } : new()
         };
 
