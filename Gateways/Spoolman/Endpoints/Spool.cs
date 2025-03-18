@@ -40,9 +40,16 @@ internal class SpoolSpoolmanEndpoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
         {
             var colorMatchingSpools = allBrandSpools.Where(spool => color.StartsWith($"#{spool.Filament.ColorHex}", StringComparison.OrdinalIgnoreCase) == true);
 
-            matchingSpool = !Spool.IsEmptyTag(tagUid) 
-                ? colorMatchingSpools.FirstOrDefault(spool => spool.Extra.ContainsKey("tag") && spool.Extra["tag"] == tagUid)
-                : colorMatchingSpools.FirstOrDefault();
+            if (!Spool.IsEmptyTag(tagUid))
+            {
+                var jsonEncoded = JsonSerializer.Serialize(tagUid, JsonOptions);
+
+                matchingSpool = colorMatchingSpools.FirstOrDefault(spool => spool.Extra.ContainsKey("tag") && spool.Extra["tag"] == jsonEncoded);
+            }
+            else
+            {
+                matchingSpool = colorMatchingSpools.FirstOrDefault();
+            }
         }
 
         matchingSpool ??= await CreateSpoolAsync(brand, color.Substring(1, 6), material, tagUid);
