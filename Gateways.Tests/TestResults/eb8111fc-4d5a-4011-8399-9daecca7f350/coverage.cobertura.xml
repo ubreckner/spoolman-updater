@@ -1,0 +1,1416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="0.6692" branch-rate="0.5185" version="1.9" timestamp="1742315692" lines-covered="176" lines-valid="263" branches-covered="28" branches-valid="54">
+  <sources>
+    <source>C:\Sources\home-assistant-spoolman-updater\Gateways\</source>
+  </sources>
+  <packages>
+    <package name="Gateways" line-rate="0.6692" branch-rate="0.5185" complexity="149">
+      <classes>
+        <class name="Gateways.GatewayChecker" filename="GatewayChecker.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Gateways.SpoolmanClient)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="3" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="3" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.GatewayChecker/&lt;CheckGatewayConnectionAsync&gt;d__2" filename="GatewayChecker.cs" line-rate="0" branch-rate="0" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="6" hits="0" branch="False" />
+                <line number="7" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="149" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="8" hits="0" branch="False" />
+                <line number="9" hits="0" branch="False" />
+                <line number="10" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="0" branch="False" />
+            <line number="7" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="149" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="8" hits="0" branch="False" />
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.HomeAssistantClient" filename="HomeAssistant\Client.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Gateways.HomeAssistantConfiguration)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+                <line number="19" hits="0" branch="False" />
+                <line number="20" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="20" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.HomeAssistantClient/&lt;GetAllTrayInfoAsync&gt;d__6" filename="HomeAssistant\Client.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="44" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.HomeAssistantClient/&lt;GetTrayInfoAsync&gt;d__5" filename="HomeAssistant\Client.cs" line-rate="0" branch-rate="0" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="28" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="252" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="29" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="28" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="252" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="29" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.HomeAssistantConfiguration" filename="HomeAssistant\Configuration.cs" line-rate="0" branch-rate="1" complexity="3">
+          <methods>
+            <method name="get_Url" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Token" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TraySensorPrefix" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="0" branch="False" />
+            <line number="6" hits="0" branch="False" />
+            <line number="7" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.TrayInfo" filename="HomeAssistant\Entities\TrayInfo.cs" line-rate="0" branch-rate="1" complexity="4">
+          <methods>
+            <method name="get_Name" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Color" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TagUid" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Type" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="0" branch="False" />
+            <line number="6" hits="0" branch="False" />
+            <line number="7" hits="0" branch="False" />
+            <line number="8" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.HomeAssistantState" filename="HomeAssistant\Entities\TrayInfo.cs" line-rate="0" branch-rate="1" complexity="2">
+          <methods>
+            <method name="get_State" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Attributes" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolmanClient" filename="Spoolman\Client.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Gateways.IHealthEndpoint,Gateways.ISpoolEndpoint,Gateways.IFieldEndpoint)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="4" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolmanClient/&lt;CheckFieldExistence&gt;d__7" filename="Spoolman\Client.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolmanClient/&lt;CheckHealthAsync&gt;d__6" filename="Spoolman\Client.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolmanClient/&lt;GetSpoolByBrandAndColorAsync&gt;d__5" filename="Spoolman\Client.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolmanClient/&lt;UseSpoolWeightAsync&gt;d__4" filename="Spoolman\Client.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolmanConfiguration" filename="Spoolman\Configuration.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Url" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="27" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="27" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FilamentQueryConstants" filename="Spoolman\Constants\QueryConstants.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="get_FilamentVendorName" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="11" branch="False" />
+              </lines>
+            </method>
+            <method name="get_FilamentMaterial" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="11" branch="False" />
+              </lines>
+            </method>
+            <method name=".cctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="1" branch="False" />
+                <line number="11" hits="1" branch="False" />
+                <line number="12" hits="1" branch="False" />
+                <line number="14" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="11" branch="False" />
+            <line number="9" hits="11" branch="False" />
+            <line number="5" hits="1" branch="False" />
+            <line number="11" hits="1" branch="False" />
+            <line number="12" hits="1" branch="False" />
+            <line number="14" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolmanEndpoint`1" filename="Spoolman\Endpoints\Base.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(Gateways.SpoolmanConfiguration)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="9" branch="False" />
+                <line number="16" hits="9" branch="False" />
+                <line number="17" hits="9" branch="False" />
+                <line number="18" hits="9" branch="False" />
+                <line number="21" hits="9" branch="False" />
+                <line number="22" hits="9" branch="False" />
+                <line number="23" hits="9" branch="False" />
+                <line number="24" hits="9" branch="False" />
+                <line number="25" hits="9" branch="False" />
+                <line number="26" hits="9" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="9" branch="False" />
+            <line number="16" hits="9" branch="False" />
+            <line number="17" hits="9" branch="False" />
+            <line number="18" hits="9" branch="False" />
+            <line number="21" hits="9" branch="False" />
+            <line number="22" hits="9" branch="False" />
+            <line number="23" hits="9" branch="False" />
+            <line number="24" hits="9" branch="False" />
+            <line number="25" hits="9" branch="False" />
+            <line number="26" hits="9" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolmanEndpoint`1/&lt;GetAllAsync&gt;d__5" filename="Spoolman\Endpoints\Base.cs" line-rate="1" branch-rate="0.5" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="29" hits="7" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="45" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="29" hits="7" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="45" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+          </lines>
+        </class>
+        <class name="Gateways.SpoolmanEndpoint`1/&lt;PostAsync&gt;d__6" filename="Spoolman\Endpoints\Base.cs" line-rate="1" branch-rate="0.5" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="32" hits="3" branch="False" />
+                <line number="33" hits="3" branch="False" />
+                <line number="34" hits="3" branch="False" />
+                <line number="36" hits="3" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="236" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="37" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="32" hits="3" branch="False" />
+            <line number="33" hits="3" branch="False" />
+            <line number="34" hits="3" branch="False" />
+            <line number="36" hits="3" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="236" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="37" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FieldSpoolmanEndpoint" filename="Spoolman\Endpoints\Field.cs" line-rate="0" branch-rate="1" complexity="2">
+          <methods>
+            <method name="get_Endpoint" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Gateways.SpoolmanConfiguration)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+            <line number="5" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FieldSpoolmanEndpoint/&lt;&gt;c__DisplayClass4_0" filename="Spoolman\Endpoints\Field.cs" line-rate="0" branch-rate="1" complexity="3">
+          <methods>
+            <method name="&lt;GetFieldAsync&gt;b__0" signature="(Gateways.Field)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="&lt;GetFieldAsync&gt;b__1" signature="(Gateways.Field)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="&lt;GetFieldAsync&gt;b__2" signature="(Gateways.Field)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="28" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="17" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FieldSpoolmanEndpoint/&lt;CheckFieldExistence&gt;d__3" filename="Spoolman\Endpoints\Field.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FieldSpoolmanEndpoint/&lt;CreateField&gt;d__5" filename="Spoolman\Endpoints\Field.cs" line-rate="0" branch-rate="0" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
+                <line number="42" hits="0" branch="False" />
+                <line number="44" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="250" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="45" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="44" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="250" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="45" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FieldSpoolmanEndpoint/&lt;GetFieldAsync&gt;d__4" filename="Spoolman\Endpoints\Field.cs" line-rate="0" branch-rate="0" complexity="8">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+                <line number="15" hits="0" branch="False" />
+                <line number="19" hits="0" branch="True" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="239" type="jump" coverage="0%" />
+                    <condition number="259" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="20" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
+                <line number="24" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="310" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="0" branch="False" />
+            <line number="19" hits="0" branch="True" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="239" type="jump" coverage="0%" />
+                <condition number="259" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="20" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="24" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="310" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FieldSpoolmanEndpoint/&lt;GetFieldsAsync&gt;d__6" filename="Spoolman\Endpoints\Field.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="48" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="48" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FieldSpoolmanEndpoint/&lt;PostAsync&gt;d__7" filename="Spoolman\Endpoints\Field.cs" line-rate="0" branch-rate="0" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="51" hits="0" branch="False" />
+                <line number="52" hits="0" branch="False" />
+                <line number="54" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="216" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="55" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="51" hits="0" branch="False" />
+            <line number="52" hits="0" branch="False" />
+            <line number="54" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="216" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="55" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FilamentSpoolManEndpoint" filename="Spoolman\Endpoints\Filament.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="get_Endpoint" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Gateways.SpoolmanConfiguration)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="3" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="3" branch="False" />
+            <line number="3" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FilamentSpoolManEndpoint/&lt;&gt;c__DisplayClass5_0" filename="Spoolman\Endpoints\Filament.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="&lt;GetFilament&gt;b__0" signature="(Gateways.Filament)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="39" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="39" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FilamentSpoolManEndpoint/&lt;CreateFilament&gt;d__4" filename="Spoolman\Endpoints\Filament.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FilamentSpoolManEndpoint/&lt;GetFilament&gt;d__5" filename="Spoolman\Endpoints\Filament.cs" line-rate="1" branch-rate="0.75" complexity="4">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="0.75" complexity="4">
+              <lines>
+                <line number="34" hits="2" branch="False" />
+                <line number="35" hits="2" branch="False" />
+                <line number="37" hits="2" branch="False" />
+                <line number="38" hits="2" branch="True" condition-coverage="75% (3/4)">
+                  <conditions>
+                    <condition number="352" type="jump" coverage="50%" />
+                    <condition number="372" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="41" hits="2" branch="False" />
+                <line number="42" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="34" hits="2" branch="False" />
+            <line number="35" hits="2" branch="False" />
+            <line number="37" hits="2" branch="False" />
+            <line number="38" hits="2" branch="True" condition-coverage="75% (3/4)">
+              <conditions>
+                <condition number="352" type="jump" coverage="50%" />
+                <condition number="372" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="41" hits="2" branch="False" />
+            <line number="42" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.FilamentSpoolManEndpoint/&lt;GetOrCreate&gt;d__3" filename="Spoolman\Endpoints\Filament.cs" line-rate="1" branch-rate="0.75" complexity="4">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="0.75" complexity="4">
+              <lines>
+                <line number="9" hits="2" branch="False" />
+                <line number="10" hits="2" branch="False" />
+                <line number="12" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="204" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="14" hits="2" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="394" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="15" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="2" branch="False" />
+            <line number="10" hits="2" branch="False" />
+            <line number="12" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="204" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="14" hits="2" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="394" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="15" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.HealthCheckSpoolmanEndpoint" filename="Spoolman\Endpoints\Health.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="get_Endpoint" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Gateways.SpoolmanConfiguration)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="1" branch="False" />
+            <line number="7" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.HealthCheckSpoolmanEndpoint/&lt;CheckHealthAsync&gt;d__3" filename="Spoolman\Endpoints\Health.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolSpoolmanEndpoint" filename="Spoolman\Endpoints\Spool.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="get_Endpoint" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Gateways.SpoolmanConfiguration,Gateways.IVendorEndpoint,Gateways.IFilamentEndpoint)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="4" branch="False" />
+                <line number="15" hits="4" branch="False" />
+                <line number="16" hits="4" branch="False" />
+                <line number="17" hits="4" branch="False" />
+                <line number="18" hits="4" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="20" hits="5" branch="False" />
+            <line number="14" hits="4" branch="False" />
+            <line number="15" hits="4" branch="False" />
+            <line number="16" hits="4" branch="False" />
+            <line number="17" hits="4" branch="False" />
+            <line number="18" hits="4" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolSpoolmanEndpoint/&lt;&gt;c__DisplayClass5_0" filename="Spoolman\Endpoints\Spool.cs" line-rate="1" branch-rate="0.5" complexity="3">
+          <methods>
+            <method name="&lt;GetOrCreateSpool&gt;b__0" signature="(Gateways.Spool)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="41" hits="13" branch="False" />
+              </lines>
+            </method>
+            <method name="&lt;GetOrCreateSpool&gt;b__1" signature="(Gateways.Spool)" line-rate="1" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="44" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="16" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="41" hits="13" branch="False" />
+            <line number="44" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="16" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+          </lines>
+        </class>
+        <class name="Gateways.SpoolSpoolmanEndpoint/&lt;CreateSpoolAsync&gt;d__7" filename="Spoolman\Endpoints\Spool.cs" line-rate="1" branch-rate="0.5" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="62" hits="1" branch="False" />
+                <line number="63" hits="1" branch="False" />
+                <line number="65" hits="1" branch="False" />
+                <line number="67" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="411" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="68" hits="1" branch="False" />
+                <line number="69" hits="1" branch="False" />
+                <line number="70" hits="1" branch="False" />
+                <line number="71" hits="1" branch="False" />
+                <line number="72" hits="1" branch="False" />
+                <line number="73" hits="1" branch="False" />
+                <line number="74" hits="1" branch="False" />
+                <line number="75" hits="1" branch="False" />
+                <line number="76" hits="1" branch="False" />
+                <line number="77" hits="1" branch="False" />
+                <line number="79" hits="1" branch="False" />
+                <line number="80" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="62" hits="1" branch="False" />
+            <line number="63" hits="1" branch="False" />
+            <line number="65" hits="1" branch="False" />
+            <line number="67" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="411" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="68" hits="1" branch="False" />
+            <line number="69" hits="1" branch="False" />
+            <line number="70" hits="1" branch="False" />
+            <line number="71" hits="1" branch="False" />
+            <line number="72" hits="1" branch="False" />
+            <line number="73" hits="1" branch="False" />
+            <line number="74" hits="1" branch="False" />
+            <line number="75" hits="1" branch="False" />
+            <line number="76" hits="1" branch="False" />
+            <line number="77" hits="1" branch="False" />
+            <line number="79" hits="1" branch="False" />
+            <line number="80" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolSpoolmanEndpoint/&lt;GetOrCreateSpool&gt;d__5" filename="Spoolman\Endpoints\Spool.cs" line-rate="0.9444" branch-rate="0.8571" complexity="14">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0.9444" branch-rate="0.8571" complexity="14">
+              <lines>
+                <line number="23" hits="3" branch="False" />
+                <line number="25" hits="3" branch="True" condition-coverage="75% (3/4)">
+                  <conditions>
+                    <condition number="90" type="jump" coverage="100%" />
+                    <condition number="113" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="26" hits="0" branch="False" />
+                <line number="29" hits="3" branch="False" />
+                <line number="31" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="169" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="32" hits="3" branch="False" />
+                <line number="33" hits="3" branch="False" />
+                <line number="34" hits="3" branch="False" />
+                <line number="36" hits="3" branch="False" />
+                <line number="38" hits="3" branch="False" />
+                <line number="39" hits="3" branch="True" condition-coverage="75% (3/4)">
+                  <conditions>
+                    <condition number="381" type="jump" coverage="50%" />
+                    <condition number="401" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="40" hits="3" branch="False" />
+                <line number="43" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="455" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="45" hits="3" branch="False" />
+                <line number="46" hits="3" branch="False" />
+                <line number="48" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="541" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="50" hits="3" branch="False" />
+                <line number="51" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="3" branch="False" />
+            <line number="25" hits="3" branch="True" condition-coverage="75% (3/4)">
+              <conditions>
+                <condition number="90" type="jump" coverage="100%" />
+                <condition number="113" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="26" hits="0" branch="False" />
+            <line number="29" hits="3" branch="False" />
+            <line number="31" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="169" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="32" hits="3" branch="False" />
+            <line number="33" hits="3" branch="False" />
+            <line number="34" hits="3" branch="False" />
+            <line number="36" hits="3" branch="False" />
+            <line number="38" hits="3" branch="False" />
+            <line number="39" hits="3" branch="True" condition-coverage="75% (3/4)">
+              <conditions>
+                <condition number="381" type="jump" coverage="50%" />
+                <condition number="401" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="40" hits="3" branch="False" />
+            <line number="43" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="455" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="45" hits="3" branch="False" />
+            <line number="46" hits="3" branch="False" />
+            <line number="48" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="541" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="50" hits="3" branch="False" />
+            <line number="51" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.SpoolSpoolmanEndpoint/&lt;UseSpoolWeight&gt;d__6" filename="Spoolman\Endpoints\Spool.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="54" hits="1" branch="False" />
+                <line number="55" hits="1" branch="False" />
+                <line number="56" hits="1" branch="False" />
+                <line number="58" hits="1" branch="False" />
+                <line number="59" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="54" hits="1" branch="False" />
+            <line number="55" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="58" hits="1" branch="False" />
+            <line number="59" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.VendorSpoolmanEndpoint" filename="Spoolman\Endpoints\Vendor.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="get_Endpoint" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Gateways.SpoolmanConfiguration)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="3" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="3" branch="False" />
+            <line number="3" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.VendorSpoolmanEndpoint/&lt;GetOrCreate&gt;d__3" filename="Spoolman\Endpoints\Vendor.cs" line-rate="1" branch-rate="0.6666" complexity="6">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="0.6666" complexity="6">
+              <lines>
+                <line number="9" hits="2" branch="False" />
+                <line number="10" hits="2" branch="False" />
+                <line number="13" hits="2" branch="True" condition-coverage="75% (3/4)">
+                  <conditions>
+                    <condition number="174" type="jump" coverage="50%" />
+                    <condition number="194" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="14" hits="1" branch="False" />
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="25" hits="2" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="392" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="26" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="2" branch="False" />
+            <line number="10" hits="2" branch="False" />
+            <line number="13" hits="2" branch="True" condition-coverage="75% (3/4)">
+              <conditions>
+                <condition number="174" type="jump" coverage="50%" />
+                <condition number="194" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="14" hits="1" branch="False" />
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="25" hits="2" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="392" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="26" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.Field" filename="Spoolman\Entities\Field.cs" line-rate="0" branch-rate="1" complexity="5">
+          <methods>
+            <method name="get_Name" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Order" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_FieldType" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Key" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_EntityType" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="0" branch="False" />
+            <line number="6" hits="0" branch="False" />
+            <line number="7" hits="0" branch="False" />
+            <line number="8" hits="0" branch="False" />
+            <line number="9" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.Filament" filename="Spoolman\Entities\Filament.cs" line-rate="1" branch-rate="1" complexity="22">
+          <methods>
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="30" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Registered" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="27" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="30" branch="False" />
+              </lines>
+            </method>
+            <method name="get_VendorId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="11" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Vendor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="32" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Material" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="35" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Price" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="27" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Density" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="28" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Diameter" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="28" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Weight" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="28" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SpoolWeight" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="27" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ArticleNumber" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Comment" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ExtruderTemp" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_BedTemp" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="23" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ColorHex" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="47" branch="False" />
+              </lines>
+            </method>
+            <method name="get_MultiColorHexes" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="25" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_MultiColorDirection" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="26" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ExternalId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="27" hits="10" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Extra" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="28" hits="27" branch="False" />
+              </lines>
+            </method>
+            <method name="GetNearestColorName" signature="(System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="31" hits="1" branch="False" />
+                <line number="32" hits="1" branch="False" />
+                <line number="34" hits="1" branch="False" />
+                <line number="35" hits="151" branch="False" />
+                <line number="36" hits="142" branch="False" />
+                <line number="37" hits="142" branch="False" />
+                <line number="38" hits="141" branch="False" />
+                <line number="39" hits="1" branch="False" />
+                <line number="40" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="GetColorDistance" signature="(System.Drawing.Color,System.Drawing.Color)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="43" hits="141" branch="False" />
+                <line number="44" hits="141" branch="False" />
+                <line number="45" hits="141" branch="False" />
+                <line number="46" hits="141" branch="False" />
+                <line number="47" hits="141" branch="False" />
+                <line number="48" hits="141" branch="False" />
+                <line number="49" hits="141" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="30" branch="False" />
+            <line number="10" hits="27" branch="False" />
+            <line number="11" hits="30" branch="False" />
+            <line number="12" hits="11" branch="False" />
+            <line number="13" hits="32" branch="False" />
+            <line number="14" hits="35" branch="False" />
+            <line number="15" hits="27" branch="False" />
+            <line number="16" hits="28" branch="False" />
+            <line number="17" hits="28" branch="False" />
+            <line number="18" hits="28" branch="False" />
+            <line number="19" hits="27" branch="False" />
+            <line number="20" hits="10" branch="False" />
+            <line number="21" hits="10" branch="False" />
+            <line number="22" hits="10" branch="False" />
+            <line number="23" hits="10" branch="False" />
+            <line number="24" hits="47" branch="False" />
+            <line number="25" hits="10" branch="False" />
+            <line number="26" hits="10" branch="False" />
+            <line number="27" hits="10" branch="False" />
+            <line number="28" hits="27" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="32" hits="1" branch="False" />
+            <line number="34" hits="1" branch="False" />
+            <line number="35" hits="151" branch="False" />
+            <line number="36" hits="142" branch="False" />
+            <line number="37" hits="142" branch="False" />
+            <line number="38" hits="141" branch="False" />
+            <line number="39" hits="1" branch="False" />
+            <line number="40" hits="1" branch="False" />
+            <line number="43" hits="141" branch="False" />
+            <line number="44" hits="141" branch="False" />
+            <line number="45" hits="141" branch="False" />
+            <line number="46" hits="141" branch="False" />
+            <line number="47" hits="141" branch="False" />
+            <line number="48" hits="141" branch="False" />
+            <line number="49" hits="141" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.Health" filename="Spoolman\Entities\Health.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_IsHealthy" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Gateways.Spool" filename="Spoolman\Entities\Spool.cs" line-rate="1" branch-rate="1" complexity="20">
+          <methods>
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="26" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Registered" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="22" branch="False" />
+              </lines>
+            </method>
+            <method name="get_FirstUsed" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="13" branch="False" />
+              </lines>
+            </method>
+            <method name="get_LastUsed" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="13" branch="False" />
+              </lines>
+            </method>
+            <method name="get_FilamentId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="8" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Filament" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="45" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Price" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name="get_RemainingWeight" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="23" branch="False" />
+              </lines>
+            </method>
+            <method name="get_InitialWeight" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="23" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SpoolWeight" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="23" branch="False" />
+              </lines>
+            </method>
+            <method name="get_UsedWeight" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="22" branch="False" />
+              </lines>
+            </method>
+            <method name="get_RemainingLength" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="22" branch="False" />
+              </lines>
+            </method>
+            <method name="get_UsedLength" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="22" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Location" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name="get_LotNumber" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Comment" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Archived" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="23" hits="22" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Extra" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="26" branch="False" />
+              </lines>
+            </method>
+            <method name="IsEmptyTag" signature="(System.String)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="26" hits="7" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="6" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="26" branch="False" />
+            <line number="8" hits="22" branch="False" />
+            <line number="9" hits="13" branch="False" />
+            <line number="10" hits="13" branch="False" />
+            <line number="11" hits="8" branch="False" />
+            <line number="12" hits="45" branch="False" />
+            <line number="13" hits="7" branch="False" />
+            <line number="14" hits="23" branch="False" />
+            <line number="15" hits="23" branch="False" />
+            <line number="16" hits="23" branch="False" />
+            <line number="17" hits="22" branch="False" />
+            <line number="18" hits="22" branch="False" />
+            <line number="19" hits="22" branch="False" />
+            <line number="20" hits="7" branch="False" />
+            <line number="21" hits="7" branch="False" />
+            <line number="22" hits="7" branch="False" />
+            <line number="23" hits="22" branch="False" />
+            <line number="24" hits="26" branch="False" />
+            <line number="26" hits="7" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="6" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+          </lines>
+        </class>
+        <class name="Gateways.Vendor" filename="Spoolman\Entities\Vendor.cs" line-rate="1" branch-rate="1" complexity="7">
+          <methods>
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="30" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Registered" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="26" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="38" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Comment" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name="get_EmptySpoolWeight" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ExternalId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="25" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Extra" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="26" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="30" branch="False" />
+            <line number="9" hits="26" branch="False" />
+            <line number="10" hits="38" branch="False" />
+            <line number="11" hits="7" branch="False" />
+            <line number="12" hits="7" branch="False" />
+            <line number="13" hits="25" branch="False" />
+            <line number="14" hits="26" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

@@ -4,10 +4,12 @@ namespace Gateways;
 
 internal class FieldSpoolmanEndpoint(SpoolmanConfiguration configuration) : SpoolmanEndpoint<Field>(configuration), IFieldEndpoint
 {
+    private EntityType FieldType { get; set; } = EntityType.Spool;
+
     protected override string Endpoint => "field";
 
     public async Task<bool> CheckFieldExistence() =>
-        await GetFieldAsync(EntityType.Spool, "tag") != null;
+        await GetFieldAsync(FieldType, "tag") != null;
 
     private async Task<Field> GetFieldAsync(EntityType fieldType, string key)
     {

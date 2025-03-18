@@ -10,7 +10,7 @@ namespace Gateways.Tests
         private Filament filament = new Filament() { Id = 2, Name = "Vendor1", Material = "PLA", ColorHex = "FFFF00" };
 
         [Test]
-        public async Task GivenNonExistingFilament_WhenGetOrCreate_CreatedFilamentldBeReturned()
+        public async Task GivenNonExistingFilament_WhenGetOrCreate_CreatedFilamentShouldBeReturned()
         {
             // Arrange & Act
             var result = await Endpoint.GetOrCreate(vendor, "FFFF00", "PLA");
