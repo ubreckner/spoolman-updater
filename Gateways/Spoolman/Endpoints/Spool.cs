@@ -1,10 +1,12 @@
 ﻿using System.Net.Http.Json;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace Gateways;
 
 internal class SpoolSpoolmanEndpoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
 {
+    private readonly SpoolmanConfiguration configuration;
     private readonly IVendorEndpoint vendorEndpoint;
     private readonly IFilamentEndpoint filamentEndpoint;
 
@@ -13,20 +15,19 @@ internal class SpoolSpoolmanEndpoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
         IVendorEndpoint vendorEndpoint,
         IFilamentEndpoint filamentEndpoint) : base(configuration)
     {
+        this.configuration = configuration;
         this.vendorEndpoint = vendorEndpoint;
         this.filamentEndpoint = filamentEndpoint;
     }
 
     protected override string Endpoint => "spool";
 
-    public async Task<Spool> GetOrCreateSpool(string brand, string material, string color, string tagUid)
+    public async Task<Spool> GetOrCreateSpool(string vendorName, string material, string color, string tagUid)
     {
-        // TODO Mapping
-        if (Spool.IsEmptyTag(tagUid) && brand == "Bambu")
-            brand = "Sunlu";
+        if (Spool.IsEmptyTag(tagUid))
+            vendorName = GetMappedBrandName(vendorName);
 
-        // Fetch all spools from Spoolman
-        var query = $"{FilamentQueryConstants.FilamentVendorName}={brand}";
+        var query = $"{FilamentQueryConstants.FilamentVendorName}={vendorName}";
 
         if (!string.IsNullOrEmpty(material))
         {
@@ -52,7 +53,7 @@ internal class SpoolSpoolmanEndpoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
             }
         }
 
-        matchingSpool ??= await CreateSpoolAsync(brand, color.Substring(1, 6), material, tagUid);
+        matchingSpool ??= await CreateSpoolAsync(vendorName, color.Substring(1, 6), material, tagUid);
 
         return matchingSpool;
     }
@@ -84,5 +85,15 @@ internal class SpoolSpoolmanEndpoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
         };
 
         return await PostAsync(newSpool);
+    }
+
+    private string GetMappedBrandName(string vendorName)
+    {
+        foreach (var mapping in configuration.VendorMappings.Where(mapping => Regex.IsMatch(vendorName, mapping.Pattern)))
+        {
+            return mapping.NewVendorName;
+        }
+
+        return vendorName;
     }
 }
