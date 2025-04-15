@@ -26,11 +26,13 @@ internal class SpoolSpoolmanEndpoint : SpoolmanEndpoint<Spool>, ISpoolEndpoint
     {
         if (Spool.IsEmptyTag(tagUid))
             vendorName = GetMappedBrandName(vendorName);
+        vendorName = Uri.EscapeDataString(vendorName);
 
         var query = $"{FilamentQueryConstants.FilamentVendorName}={vendorName}";
 
         if (!string.IsNullOrEmpty(material))
         {
+            material = Uri.EscapeDataString(material);
             query += $"&{FilamentQueryConstants.FilamentMaterial}={material}";
         }
 
